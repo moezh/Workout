@@ -1,0 +1,14 @@
+---
+interface Props {
+  className?: string;
+}
+const { className } = Astro.props;
+---
+
+<div
+  class={`${className || ""} transition opacity-0 translate-left`}
+  class-observer-in="opacity-100 translate-0"
+  class-observer-out="opacity-0 translate-left"
+>
+  <slot />
+</div>

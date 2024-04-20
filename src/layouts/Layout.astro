@@ -1,0 +1,72 @@
+---
+import "../styles/main.css";
+
+import IntersectionObserver from "../components/IntersectionObserver.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" hreflang="x-default" href="https://www.com6.cc/" />
+  </head>
+  <body class="flex flex-col">
+    <header class="flex-shrink px-6 py-4 max-w-screen-lg mx-auto w-full">
+      <div class="flex">
+        <div class="flex-shrink">
+          <a href="/" aria-label="Homepage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m18 16 4-4-4-4"></path>
+              <path d="m6 8-4 4 4 4"></path>
+              <path d="m14.5 4-5 16"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="flex-grow"></div>
+        <div class="flex-shrink"></div>
+      </div>
+    </header>
+    <main class="flex-shrink pb-8">
+      <div class="flex flex-col">
+        <slot />
+      </div>
+    </main>
+    <footer class="flex-shrink px-6 py-4 max-w-screen-lg mx-auto w-full">
+      <div class="flex flex-col">
+        <div class="flex space-x-3">
+          <a href="/blog" aria-label="Blog">Blog</a>
+          <a href="/contact" aria-label="Contact">Contact</a>
+          <a href="/privacy-policy" aria-label="Privacy Policy">
+            Privacy Policy
+          </a>
+          <a href="/terms-of-service" aria-label="Terms of Service">
+            Terms of Service
+          </a>
+        </div>
+        Copyright © {new Date().getFullYear()} - All right reserved
+      </div>
+    </footer>
+    <IntersectionObserver />
+  </body>
+</html>

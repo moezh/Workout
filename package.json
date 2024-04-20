@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "wrangler pages dev dist",
+    "create": "wrangler pages project create workout --production-branch=main",
+    "deploy": "wrangler pages deploy dist --project-name=workout",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "*"
+  },
+  "devDependencies": {
+    "@astrojs/check": "*",
+    "@astrojs/sitemap": "*",
+    "@astrojs/tailwind": "*",
+    "tailwindcss": "*",
+    "typescript": "*",
+    "wrangler": "*"
+  }
+}

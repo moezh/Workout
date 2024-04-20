@@ -1,0 +1,75 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import type { PaginateFunction } from "astro";
+
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction;
+}) {
+  const posts = await getCollection("post");
+  return paginate(posts, { pageSize: 8 });
+}
+
+const { page } = Astro.props;
+---
+
+<Layout
+  title="Blog Posts"
+  description="Here's the list of blog post about fitness, workout, and personal thoughts posted by me."
+>
+  <div class="banner">
+    <div class="container pt-8 pb-16">
+      <h1>Blog Articles</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="flex flex-row flex-wrap pt-4">
+      {
+        page.data.map((post, index) => (
+          <div
+            class={`w-full mb-6 md:w-1/2 ${
+              index % 2 === 0 ? "md:pr-6" : "md:pl-6"
+            }`}
+          >
+            <h2>
+              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            </h2>
+            <p>{post.data.description}</p>
+            <div class="pt-4">
+              <a href={`/blog/${post.slug}/`}>Read Post →</a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="flex flex-row justify-center text-center pt-10">
+      <div class="w-24">
+        {
+          page.currentPage === 1 ? null : (
+            <a
+              href={
+                page.currentPage === 2
+                  ? "/blog"
+                  : `/blog/${page.currentPage - 1}/`
+              }
+            >
+              ← Previous
+            </a>
+          )
+        }
+      </div>
+      <div class="w-32">
+        Page {page.currentPage} / {page.lastPage}
+      </div>
+      <div class="w-24">
+        {
+          page.currentPage === page.lastPage ? null : (
+            <a href={`/blog/${page.currentPage + 1}/`}>Next →</a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,29 @@
+<script>
+  const observerItems = document.querySelectorAll(
+    "[class-observer-in], [class-observer-out]"
+  );
+
+  const options = {
+    root: null,
+    threshold: 0,
+    rootMargin: "1000px 0px -96px 0px",
+  };
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      const classIn = entry.target.getAttribute("class-observer-in") || "";
+      const classOut = entry.target.getAttribute("class-observer-out") || "";
+      if (!entry.isIntersecting) {
+        entry.target.classList.remove(...classIn.split(" "));
+        entry.target.classList.add(...classOut.split(" "));
+        return;
+      }
+      entry.target.classList.remove(...classOut.split(" "));
+      entry.target.classList.add(...classIn.split(" "));
+    });
+  }, options);
+
+  observerItems.forEach((item) => {
+    observer.observe(item);
+  });
+</script>
