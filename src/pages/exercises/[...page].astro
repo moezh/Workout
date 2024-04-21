@@ -43,7 +43,7 @@ const { page } = Astro.props;
             <a href={`/exercises/${exercise.id}/`}>
               <Image
                 src={`/assets/exercises/images/${exercise.id}.jpg`}
-                alt={exercise.id}
+                alt={"exercise id: " + exercise.id}
                 width={200}
                 height={200}
               />
