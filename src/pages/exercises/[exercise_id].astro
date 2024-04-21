@@ -40,12 +40,12 @@ const { exercise } = Astro.props;
       }
     </ul>
     <h2>Hints</h2>
-    <p>
+    <ul>
       {
         exercise.data.hints
           .split(".")
           .map((hint) => (hint ? <li>{hint}.</li> : null))
       }
-    </p>
+    </ul>
   </div>
 </Layout>
