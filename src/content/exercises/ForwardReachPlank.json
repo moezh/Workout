@@ -1,0 +1,10 @@
+{
+  "id": "ForwardReachPlank",
+  "name": "Forward Reach Plank",
+  "order": 5,
+  "category": "Strength",
+  "target": "Core",
+  "target_muscles": "Abs",
+  "instruction": "Assume a high plank position. Reach forward with your right arm so that your arm is parallel with the ground. Return right arm back to the ground. Reach forward with your left arm and return back to ground. Alternate back and forth for the desired time.",
+  "hints": "Don't allow your hips to twist as you reach forward. Don't allow your hips to sag. Your body should form a straight line from your heels to your shoulders."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "CalfRaises",
+  "name": "Calf Raises",
+  "order": 4,
+  "category": "Strength",
+  "target": "Lower Body",
+  "target_muscles": "Calves",
+  "instruction": "Stand with your torso upright, your feet hip-width apart, and your toes pointing forward. Raise your heels off the floor and squeeze your calves. Return to the starting position, by slowly lowering your heels, and repeat.",
+  "hints": "When doing calf raises, brace your core, face forward and keep your toes pointing straight ahead. Raise your heels and breathe out as you squeeze your calves. Breathe in as you lower your heels and slowly return to the starting position."
+}

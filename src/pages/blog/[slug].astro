@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("post");
+  const posts = await getCollection("posts");
   return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
@@ -16,7 +16,7 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title} description={post.data.description}>
   <div class="banner">
-    <div class="container pt-8 pb-16">
+    <div class="container pb-8">
       <h1>{post.data.title}</h1>
     </div>
   </div>

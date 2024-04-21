@@ -1,0 +1,10 @@
+{
+  "id": "SitUp",
+  "name": "Sit Up",
+  "order": 5,
+  "category": "Strength",
+  "target": "Core",
+  "target_muscles": "Abs",
+  "instruction": "Lie down on your back, keep your knees bent, and your back and feet flat on the mat. Slowly lift your torso and sit up. Return to the starting position by rolling down one vertebra at a time. Repeat the exercise until set is complete.",
+  "hints": "Keep your abs engaged, your chest open and your shoulders, neck and back relaxed. Breathe out as you crunch and use only your ab strength to lift your torso up. Inhale as you slowly return to the starting position, rolling your spine one vertebrae at a time."
+}

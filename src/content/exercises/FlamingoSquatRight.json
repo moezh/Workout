@@ -1,0 +1,11 @@
+{
+  "id": "FlamingoSquatRight",
+  "name": "Flamingo Squat",
+  "side": "Right",
+  "order": 4,
+  "category": "Strength",
+  "target": "Lower Body",
+  "target_muscles": "Abs, Glutes, Quadriceps, Calves",
+  "instruction": "Stand up straight with your feet hip-width apart, wrap your left leg around your right leg. Start bending your right knee and slowly lower your hips back. Push through the left heel to return to the starting position. Switch legs and repeat.",
+  "hints": "Keep your back straight, chest open, shoulders back and tighten your core. Breathe in as you lower your hips back slowly and keep your balance by lifting both arms to the front. Go only as low as you can without losing form and breathe out as you push through the heel to get back up."
+}

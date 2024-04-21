@@ -1,0 +1,10 @@
+{
+  "id": "WindshieldWiper",
+  "name": "Windshield Wipers",
+  "order": 5,
+  "category": "Strength",
+  "target": "Core",
+  "target_muscles": "Abs, Obliques",
+  "instruction": "Lie on your back with your arms straight out to the sides and lift your legs and bend the knees at a 90-degree angle. Rotate the hips to one side, without letting the legs touch the floor. Lift your legs and return to the starting position. Rotate the hips to the opposite side and repeat until set is complete.",
+  "hints": "Keep your body in a T shape with your back flat on the mat, your core engaged and your abs tight. Breathe out as you rotate the hips and lower the legs and keep the movement slow and controlled."
+}

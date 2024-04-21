@@ -1,0 +1,17 @@
+{
+  "id": "LowerBodyWorkout",
+  "type": "Lower Body Workout",
+  "name": "Glutes & Legs",
+  "description": "This workout exercises your lower body, with all muscle groups located in this part being used and stimulated in one single session.",
+  "work_seconds": 30,
+  "rest_seconds": 10,
+  "circuit": 3,
+  "warmupTarget": [],
+  "workoutTarget": [
+    { "category": "Cardio", "target": "Lower Body" },
+    { "category": "Strength", "target_muscles": "Glutes" },
+    { "category": "Strength", "target_muscles": "Quadriceps" },
+    { "category": "Strength", "target_muscles": "Hamstrings" }
+  ],
+  "coolDownTarget": []
+}

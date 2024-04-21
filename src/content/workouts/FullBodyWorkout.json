@@ -1,0 +1,25 @@
+{
+  "id": "FullBodyWorkout",
+  "type": "Full Body Workout",
+  "name": "Upper, Lower & Core",
+  "description": "This workout exercises your whole body, with all muscle groups being used and stimulated in one single session.",
+  "work_seconds": 30,
+  "rest_seconds": 10,
+  "circuit": 1,
+  "warmupTarget": [],
+  "workoutTarget": [
+    { "category": "Cardio", "target": "Upper Body" },
+    { "category": "Strength", "target_muscles": "Shoulders" },
+    { "category": "Strength", "target_muscles": "Glutes" },
+    { "category": "Strength", "target_muscles": "Abs" },
+    { "category": "Cardio", "target": "Lower Body" },
+    { "category": "Strength", "target_muscles": "Chest" },
+    { "category": "Strength", "target_muscles": "Hamstrings" },
+    { "category": "Strength", "target_muscles": "Obliques" },
+    { "category": "Cardio", "target": "Core" },
+    { "category": "Strength", "target_muscles": "Triceps" },
+    { "category": "Strength", "target_muscles": "Quadriceps" },
+    { "category": "Strength", "target_muscles": "Lower Back" }
+  ],
+  "coolDownTarget": []
+}

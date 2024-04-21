@@ -1,0 +1,88 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import type { PaginateFunction } from "astro";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction;
+}) {
+  const workouts = await getCollection("workouts");
+  return paginate(workouts, { pageSize: 12 });
+}
+
+const { page } = Astro.props;
+---
+
+<Layout
+  title="List of workouts"
+  description="This list of workouts without equipment can be done daily anytime, anywhere. Even if you travel for work, if you have some space to stretch out, then you can workout."
+>
+  <div class="banner">
+    <div class="container pb-8">
+      <h1>Workouts</h1>
+      {
+        page.currentPage === 1 ? null : (
+          <>
+            Page {page.currentPage} / {page.lastPage}
+          </>
+        )
+      }
+    </div>
+  </div>
+  <div class="container">
+    <div class="flex flex-row flex-wrap pt-4">
+      {
+        page.data.map((workout) => (
+          <div class="flex-col w-full md:w-1/2 px-2 mb-4">
+            <a href={`/workouts/${workout.id}/`}>
+              <Image
+                src={`/assets/workouts/images/${workout.id}.jpg`}
+                alt={workout.data.name}
+                width={800}
+                height={600}
+                class="mx-auto"
+              />
+              <div class="w-full mx-auto h-[75px] banner px-4">
+                <p>
+                  <b>{workout.data.type}</b>
+                  <br />
+                  {workout.data.name}
+                </p>
+              </div>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+    {
+      page.lastPage === 1 ? null : (
+        <div class="flex flex-row justify-center text-center pt-10">
+          <div class="w-24">
+            {page.currentPage === 1 ? null : (
+              <a
+                href={
+                  page.currentPage === 2
+                    ? "/workouts"
+                    : `/workouts/${page.currentPage - 1}/`
+                }
+              >
+                ← Previous
+              </a>
+            )}
+          </div>
+          <div class="w-32">
+            Page {page.currentPage} / {page.lastPage}
+          </div>
+          <div class="w-24">
+            {page.currentPage === page.lastPage ? null : (
+              <a href={`/workouts/${page.currentPage + 1}/`}>Next →</a>
+            )}
+          </div>
+        </div>
+      )
+    }
+  </div>
+</Layout>

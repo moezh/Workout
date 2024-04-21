@@ -1,0 +1,11 @@
+{
+  "id": "SplitSquatLeft",
+  "name": "Split Squat",
+  "side": "Left",
+  "order": 4,
+  "category": "Strength",
+  "target": "Lower Body",
+  "target_muscles": "Glutes, Quadriceps, Hamstrings, Calves",
+  "instruction": "Start in a split leg position, with one leg forward and one leg back. Flex your knees and lower your hips, until the back knee is just above the floor. Stand back up and return to the starting position. Repeat this movement for as many reps as recommended and then switch legs.",
+  "hints": "Keep your feet hip-width apart, roll your shoulders back and tighten your abs. Breathe in as you lunge, and put your weight in the front heel. Keep the movement smooth and continuous and exhale as you push yourself back up."
+}

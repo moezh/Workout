@@ -1,0 +1,10 @@
+{
+  "id": "KneelingLeanBack",
+  "name": "Kneeling Lean Back",
+  "order": 4,
+  "category": "Strength",
+  "target": "Lower Body",
+  "target_muscles": "Abs, Quadriceps, Glutes",
+  "instruction": "Kneel with knees hip-width apart, arms extended at your sides and palms facing thighs. Lean back as far as possible with your body in a straight line. Come back forward to the starting position and repeat.",
+  "hints": "Do not arch your back as you lean back but simply move from your knees. Squeeze your glutes, brace your abs and move in a slow and controlled fashion."
+}

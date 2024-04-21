@@ -1,0 +1,11 @@
+{
+  "id": "SidePlankLeft",
+  "name": "Side Plank",
+  "side": "Left",
+  "order": 5,
+  "category": "Strength",
+  "target": "Core",
+  "target_muscles": "Obliques",
+  "instruction": "Lie on your left side with your body fully extended. Lift your body off the ground and balance your weight between the forearm and the side of the foot. Keep your body in a straight line and hold for as long as you can. Change sides and repeat.",
+  "hints": "While doing side planks, position your elbow under your shoulder, keep your core engaged, your abs tight, and breathe slowly. Your body should form a straight line from your head down to your feet."
+}

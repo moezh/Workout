@@ -1,0 +1,10 @@
+{
+  "id": "DeadBug",
+  "name": "Dead Bug",
+  "order": 5,
+  "category": "Strength",
+  "target": "Core",
+  "target_muscles": "Abs",
+  "instruction": "Lie on your back with your knees bent and extend your arms toward the ceiling. Lower your right leg and extend your left arm behind your head. Return to the starting position and repeat with the opposite arm and leg. Keep switching sides until the set is complete.",
+  "hints": "Keep your lower back flat against the floor, and keep your abdominal muscles tight. Breathe out as you lower your leg and extend your arm, and hold them parallel to the floor. Breathe in as you return to the starting position and then switch sides."
+}

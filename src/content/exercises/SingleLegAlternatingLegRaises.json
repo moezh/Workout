@@ -1,0 +1,10 @@
+{
+  "id": "SingleLegAlternatingLegRaises",
+  "name": "Single Leg Alternating Leg Raises",
+  "order": 5,
+  "category": "Strength",
+  "target": "Core",
+  "target_muscles": "Abs, Lower Back",
+  "instruction": "Lie on your back on the floor and raise your legs until they are perpendicular to the floor. Keeping your right leg still, lower your left leg until your heel touches the floor. Pause and then return the leg to the starting position. Repeat with the opposite leg.",
+  "hints": "Keep your leg as straight as possible during the movement. Keep the lower back in contact with the floor throughout the movement. Breathe out as you lower your leg and breathe in as you slowly return to the starting position."
+}

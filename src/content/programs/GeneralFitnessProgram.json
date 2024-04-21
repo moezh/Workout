@@ -1,0 +1,41 @@
+{
+  "programId": "GeneralFitnessProgram",
+  "programType": "General Fitness Program",
+  "programName": "Tone & Sculpt",
+  "programDescription": "A progressive, well-balanced strength training program that improves all the most important metrics, such as strength endurance, muscle growth, and the cardiovascular system.",
+  "programWorkouts": {
+    "2DaysPerWeek": ["FullBodyWorkout", "CardioWorkout"],
+    "3DaysPerWeek": ["FullBodyWorkout", "CardioWorkout", "FullBodyWorkout"],
+    "4DaysPerWeek": [
+      "FullBodyWorkout",
+      "CardioWorkout",
+      "FullBodyWorkout",
+      "CardioWorkout"
+    ],
+    "5DaysPerWeek": [
+      "UpperBodyWorkout",
+      "CardioWorkout",
+      "LowerBodyWorkout",
+      "CardioWorkout",
+      "CoreWorkout"
+    ],
+    "6DaysPerWeek": [
+      "FullBodyWorkout",
+      "CardioWorkout",
+      "UpperBodyWorkout",
+      "LowerBodyWorkout",
+      "CoreWorkout",
+      "CardioWorkout"
+    ],
+    "7DaysPerWeek": [
+      "FullBodyWorkout",
+      "CardioWorkout",
+      "UpperBodyWorkout",
+      "LowerBodyWorkout",
+      "CoreWorkout",
+      "CardioWorkout",
+      "FullBodyWorkout"
+    ]
+  },
+  "programWeeks": 12
+}

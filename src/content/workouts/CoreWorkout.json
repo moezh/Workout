@@ -1,0 +1,17 @@
+{
+  "id": "CoreWorkout",
+  "type": "Core Workout",
+  "name": "Abs, Obliques & Lower Back",
+  "description": "This workout exercises your core, with all muscle groups located in this part being used and stimulated in one single session.",
+  "work_seconds": 30,
+  "rest_seconds": 10,
+  "circuit": 3,
+  "warmupTarget": [],
+  "workoutTarget": [
+    { "category": "Cardio", "target": "Core" },
+    { "category": "Strength", "target_muscles": "Abs" },
+    { "category": "Strength", "target_muscles": "Obliques" },
+    { "category": "Strength", "target_muscles": "Lower Back" }
+  ],
+  "coolDownTarget": []
+}

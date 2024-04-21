@@ -1,0 +1,19 @@
+{
+  "id": "CardioWorkout",
+  "type": "Cardio Workout",
+  "name": "HIIT & Cardio",
+  "description": "This workout exercises your cardio-vascular system, with your heart and lungs being used and stimulated in one single session.",
+  "work_seconds": 30,
+  "rest_seconds": 10,
+  "circuit": 2,
+  "warmupTarget": [],
+  "workoutTarget": [
+    { "category": "Cardio", "target": "Upper Body" },
+    { "category": "Cardio", "target": "Core" },
+    { "category": "Cardio", "target": "Lower Body" },
+    { "category": "Cardio", "target": "Upper Body" },
+    { "category": "Cardio", "target": "Core" },
+    { "category": "Cardio", "target": "Lower Body" }
+  ],
+  "coolDownTarget": []
+}

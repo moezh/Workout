@@ -1,0 +1,10 @@
+{
+  "id": "Burpees",
+  "name": "Burpees",
+  "order": 1,
+  "category": "Cardio",
+  "target": "Full Body, Upper Body, Core, Lower Body",
+  "target_muscles": "Shoulders, Chest, Triceps, Biceps, Back, Abs, Glutes, Hamstrings, Quadriceps, Calves",
+  "instruction": "Stand straight with your feet shoulder-width apart. Squat and place your hands in front of your feet. Jump back until your legs are fully extended and your body is in plank position. Jump forward, and then push through the heels to return to the starting position. Repeat until the set is complete.",
+  "hints": "Keep your back straight and your core engaged at all times. Maintain a natural and regular breathing pattern throughout the exercise."
+}

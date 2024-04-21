@@ -1,0 +1,10 @@
+{
+  "id": "Squat",
+  "name": "Squat",
+  "order": 4,
+  "category": "Strength",
+  "target": "Lower Body",
+  "target_muscles": "Glutes, Quadriceps, Calves",
+  "instruction": "Stand up with your feet shoulder-width apart. Bend your knees, press your hips back and stop the movement once the hip joint is slightly lower than the knees. Press your heels into the floor to return to the initial position. Repeat until set is complete.",
+  "hints": "When doing squats maintain your back in alignment, by keeping your chest up and your hips back. Don't let the knees extend beyond the toes and put pressure on the heels of the feet. Breathe in as you squat and breathe out as you come up."
+}

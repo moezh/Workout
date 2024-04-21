@@ -1,0 +1,10 @@
+{
+  "id": "KneePushUp",
+  "name": "Knee Push Up",
+  "order": 3,
+  "category": "Strength",
+  "target": "Upper Body",
+  "target_muscles": "Chest, Shoulders, Triceps",
+  "instruction": "Place the knees on the floor, the hands below the shoulders, and cross your feet. Keeping your back straight, start bending the elbows until your chest is almost touching the floor. Pause and push back to the starting position. Repeat until the set is complete.",
+  "hints": "Keep your head, hips, and torso in line. Maintain your core muscles tight and keep your spine in a neutral position. Inhale as you lower the chest and breathe out as you push back up."
+}

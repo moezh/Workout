@@ -1,0 +1,51 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const exercises = await getCollection("exercises");
+  return exercises.map((exercise) => ({
+    params: { exercise_id: exercise.id },
+    props: { exercise },
+  }));
+}
+
+const { exercise } = Astro.props;
+---
+
+<Layout title={exercise.data.name} description={exercise.data.instruction}>
+  <div class="banner">
+    <div class="container pb-8">
+      <h1>{exercise.data.name}</h1>
+    </div>
+  </div>
+  <div class="container">
+    <video autoplay muted loop width={400} height={300} class="mx-auto">
+      <source
+        src={`/assets/exercises/videos/${exercise.id}.mp4`}
+        type="video/mp4"
+      />
+    </video>
+    <h2>Instruction</h2>
+    <ul>
+      {
+        exercise.data.instruction.split(".").map((inst, index) =>
+          inst ? (
+            <li>
+              <b>Step {index + 1}:</b> {inst}.
+            </li>
+          ) : null
+        )
+      }
+    </ul>
+    <h2>Hints</h2>
+    <p>
+      {
+        exercise.data.hints
+          .split(".")
+          .map((hint) => (hint ? <li>{hint}.</li> : null))
+      }
+    </p>
+  </div>
+</Layout>

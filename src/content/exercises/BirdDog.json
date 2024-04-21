@@ -1,0 +1,10 @@
+{
+  "id": "BirdDog",
+  "name": "Bird Dog",
+  "order": 2,
+  "category": "Strength",
+  "target": "Core, Lower Body",
+  "target_muscles": "Abs, Lower Back, Glutes",
+  "instruction": "Start on your hands and knees with the hands under the shoulders and the knees under the hips. Extend one leg and the opposite arm at the same time. Return to the starting position, and switch sides. Continue alternating sides until set is complete.",
+  "hints": "Keep your spine in a neutral position, with your head and neck in alignment, and relax your shoulders. Breathe in as you lift your arm and the opposite leg, and maintain your torso stable by engaging your core."
+}

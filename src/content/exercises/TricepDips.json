@@ -1,0 +1,11 @@
+{
+  "id": "TricepDips",
+  "name": "Tricep Dips",
+  "order": 3,
+  "category": "Strength",
+  "target": "Upper Body",
+  "target_muscles": "Triceps, Shoulders, Upper Back",
+  "equipment": "Bench, Chair, Step",
+  "instruction": "Place your hands behind you onto a chair, so that your fingers face forward. Extend your legs and start bending your elbows. Lower your body until your arms are at a 90-degree angle. Lift your body back up until your arms are straight. Repeat.",
+  "hints": "Roll your shoulders back, open the chest, keep your neck nice and tall and place your hands underneath your shoulders. Inhale as you bend your elbows and breathe out as you extend the elbows and lift yourself back up."
+}
