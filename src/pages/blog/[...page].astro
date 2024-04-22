@@ -22,6 +22,13 @@ const { page } = Astro.props;
   <div class="banner">
     <div class="container pb-8">
       <h1>Blog Articles</h1>
+      {
+        page.lastPage === 1 ? null : (
+          <>
+            Page {page.currentPage} / {page.lastPage}
+          </>
+        )
+      }
     </div>
   </div>
   <div class="container">
@@ -44,32 +51,32 @@ const { page } = Astro.props;
         ))
       }
     </div>
-    <div class="flex flex-row justify-center text-center pt-10">
-      <div class="w-24">
-        {
-          page.currentPage === 1 ? null : (
-            <a
-              href={
-                page.currentPage === 2
-                  ? "/blog"
-                  : `/blog/${page.currentPage - 1}/`
-              }
-            >
-              ← Previous
-            </a>
-          )
-        }
-      </div>
-      <div class="w-32">
-        Page {page.currentPage} / {page.lastPage}
-      </div>
-      <div class="w-24">
-        {
-          page.currentPage === page.lastPage ? null : (
-            <a href={`/blog/${page.currentPage + 1}/`}>Next →</a>
-          )
-        }
-      </div>
-    </div>
+    {
+      page.lastPage === 1 ? null : (
+        <div class="flex flex-row justify-center text-center pt-10">
+          <div class="w-24">
+            {page.currentPage === 1 ? null : (
+              <a
+                href={
+                  page.currentPage === 2
+                    ? "/blog"
+                    : `/blog/${page.currentPage - 1}/`
+                }
+              >
+                ← Previous
+              </a>
+            )}
+          </div>
+          <div class="w-32">
+            Page {page.currentPage} / {page.lastPage}
+          </div>
+          <div class="w-24">
+            {page.currentPage === page.lastPage ? null : (
+              <a href={`/blog/${page.currentPage + 1}/`}>Next →</a>
+            )}
+          </div>
+        </div>
+      )
+    }
   </div>
 </Layout>
