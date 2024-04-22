@@ -131,9 +131,11 @@ const Workout = (props: Props) => {
           <div className="flex-shrink w-[150px] md:w-[200px]">
             <img
               src={`/assets/exercises/images/${exercise.data.id}.jpg`}
-              alt={"exercise: " + exercise.data.name}
+              alt={"Exercise " + exercise.data.name}
               width={200}
               height={200}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="flex-grow pl-8">
