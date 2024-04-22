@@ -24,7 +24,7 @@ const { workout, exercises } = Astro.props;
       <p>{workout.data.description}</p>
     </div>
   </div>
-  <div class="container pt-4">
+  <div class="container pt-8">
     <Workout workout={workout} exercises={exercises} client:load />
   </div>
 </Layout>

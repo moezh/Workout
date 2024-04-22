@@ -127,7 +127,7 @@ const Workout = (props: Props) => {
         </button>
       </div>
       {workout.map((exercise, index) => (
-        <div key={index} className="flex items-center justify-center pt-4">
+        <div key={index} className="flex items-center justify-center pt-8">
           <div className="flex-shrink w-[150px] md:w-[200px]">
             <img
               src={`/assets/exercises/images/${exercise.data.id}.jpg`}
