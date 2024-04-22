@@ -111,9 +111,6 @@ button {
   cursor: pointer;
   text-align: center;
 }
-.full-width {
-  width: 100%;
-}
 .astro-code {
   padding: var(--size-base) var(--size-medium);
   margin: var(--size-base) 0;

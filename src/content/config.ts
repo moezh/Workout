@@ -8,22 +8,17 @@ const posts = defineCollection({
   }),
 });
 
-const programs = defineCollection({
+const exercises = defineCollection({
   type: "data",
   schema: z.object({
-    programId: z.string(),
-    programType: z.string(),
-    programName: z.string(),
-    programDescription: z.string(),
-    programWorkouts: z.object({
-      "2DaysPerWeek": z.array(z.string()),
-      "3DaysPerWeek": z.array(z.string()),
-      "4DaysPerWeek": z.array(z.string()),
-      "5DaysPerWeek": z.array(z.string()),
-      "6DaysPerWeek": z.array(z.string()),
-      "7DaysPerWeek": z.array(z.string()),
-    }),
-    programWeeks: z.number(),
+    id: z.string(),
+    name: z.string(),
+    order: z.number(),
+    category: z.string(),
+    target: z.string(),
+    target_muscles: z.string(),
+    instruction: z.string(),
+    hints: z.string(),
   }),
 });
 
@@ -59,23 +54,8 @@ const workouts = defineCollection({
   }),
 });
 
-const exercises = defineCollection({
-  type: "data",
-  schema: z.object({
-    id: z.string(),
-    name: z.string(),
-    order: z.number(),
-    category: z.string(),
-    target: z.string(),
-    target_muscles: z.string(),
-    instruction: z.string(),
-    hints: z.string(),
-  }),
-});
-
 export const collections = {
   posts: posts,
-  programs: programs,
-  workouts: workouts,
   exercises: exercises,
+  workouts: workouts,
 };

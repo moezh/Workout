@@ -30,7 +30,7 @@ function getRandomExercises(listExercises: Exercises, listFilter: Filter) {
 
   listFilter.map((filter) => {
     let filtredExercises = listExercises.filter(
-      (exercise) => !exercise.id.includes("Left")
+      (exercise) => !exercise.data.id.includes("Left")
     );
     if (filter.category && filter.category != "") {
       filtredExercises = filtredExercises.filter((exercise) =>
@@ -66,7 +66,7 @@ function getRandomExercises(listExercises: Exercises, listFilter: Filter) {
       /*if (filtredExercises[0].id.includes("Right")) {
         let resultOtherSide = listExercises.filter(
           (exercise) =>
-            exercise.id == filtredExercises[0].id.replace("Right", "Left")
+            exercise.data.id == filtredExercises[0].id.replace("Right", "Left")
         )[0];
         if (resultOtherSide) {
           randomExercises.push(resultOtherSide);
@@ -121,8 +121,8 @@ const Workout = (props: Props) => {
 
   return workout ? (
     <div className="flex-col items-center justify-center">
-      <div className="flex">
-        <button className="button full-width rounded-md" onClick={startPlayer}>
+      <div className="flex justify-center">
+        <button className="button" onClick={startPlayer}>
           Start Workout →
         </button>
       </div>
@@ -130,7 +130,7 @@ const Workout = (props: Props) => {
         <div className="flex items-center justify-center pt-4">
           <div className="flex-shrink">
             <img
-              src={`/assets/exercises/images/${exercise.id}.jpg`}
+              src={`/assets/exercises/images/${exercise.data.id}.jpg`}
               alt={"exercise: " + exercise.data.name}
               width={200}
               height={200}
@@ -142,15 +142,10 @@ const Workout = (props: Props) => {
             <small>30s work / 10s rest</small>
           </div>
           <div className="flex-shrink">
-            <a href={`/exercises/${exercise.id}/`}>→</a>
+            <a href={`/exercises/${exercise.data.id}/`}>→</a>
           </div>
         </div>
       ))}
-      <div className="flex pt-4">
-        <button className="button full-width rounded-md" onClick={startPlayer}>
-          Start Workout →
-        </button>
-      </div>
     </div>
   ) : null;
 };

@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   const workouts = await getCollection("workouts");
   const exercises = await getCollection("exercises");
   return workouts.map((workout) => ({
-    params: { workout_id: workout.id },
+    params: { workout_id: workout.data.id },
     props: { workout, exercises },
   }));
 }
@@ -17,22 +17,25 @@ const { workout, exercises } = Astro.props;
 ---
 
 <Layout title={workout.data.name} description={workout.data.description}>
-  <div class="container">
-    <div class="h-[225px] overflow-hidden rounded-t-lg">
+  <div class="banner">
+    <div class="container pt-8 pb-16">
+      <h1>{workout.data.type}</h1>
+      <h2>{workout.data.name}</h2>
+      <p>{workout.data.description}</p>
+    </div>
+  </div>
+  <div class="container pt-4">
+    <div class="h-[225px] overflow-hidden rounded-lg">
       <Image
-        src={`/assets/workouts/images/${workout.id}.jpg`}
+        src={`/assets/workouts/images/${workout.data.id}.jpg`}
         alt={workout.data.name}
         width={1000}
         height={750}
         class="relative -top-[0px] sm:-top-[50px] md:-top-[100px] lg:-top-[150px] mx-auto"
       />
     </div>
-    <div class="banner px-4 pb-6 rounded-b-lg">
-      <p><b>{workout.data.type}</b><br />{workout.data.name}</p>
-      <p>{workout.data.description}</p>
-    </div>
   </div>
-  <div class="container pt-2">
+  <div class="container pt-4">
     <Workout workout={workout} exercises={exercises} client:load />
   </div>
 </Layout>

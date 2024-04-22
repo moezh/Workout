@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 export async function getStaticPaths() {
   const exercises = await getCollection("exercises");
   return exercises.map((exercise) => ({
-    params: { exercise_id: exercise.id },
+    params: { exercise_id: exercise.data.id },
     props: { exercise },
   }));
 }
@@ -16,18 +16,18 @@ const { exercise } = Astro.props;
 
 <Layout title={exercise.data.name} description={exercise.data.instruction}>
   <div class="banner">
-    <div class="container pb-8">
+    <div class="container pt-8 pb-16">
       <h1>{exercise.data.name}</h1>
     </div>
   </div>
-  <div class="container">
+  <div class="container pt-8">
     <video autoplay muted loop width={400} height={300} class="mx-auto">
       <source
-        src={`/assets/exercises/videos/${exercise.id}.mp4`}
+        src={`/assets/exercises/videos/${exercise.data.id}.mp4`}
         type="video/mp4"
       />
     </video>
-    <h2>Instruction</h2>
+    <h2 class="pt-8">Instruction</h2>
     <ul>
       {
         exercise.data.instruction.split(".").map((inst, index) =>
@@ -39,7 +39,7 @@ const { exercise } = Astro.props;
         )
       }
     </ul>
-    <h2>Hints</h2>
+    <h2 class="pt-8">Hints</h2>
     <ul>
       {
         exercise.data.hints

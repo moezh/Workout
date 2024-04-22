@@ -10,7 +10,7 @@ export async function getStaticPaths({
   paginate: PaginateFunction;
 }) {
   const exercises = await getCollection("exercises", (exercise) => {
-    return exercise.id.slice(-5) !== "Right";
+    return exercise.data.id.slice(-5) !== "Right";
   });
 
   return paginate(exercises, { pageSize: 12 });
@@ -24,7 +24,7 @@ const { page } = Astro.props;
   description="This list of exercises without equipment can be done daily anytime, anywhere. Even if you travel for work, if you have some space to stretch out, then you can exercise."
 >
   <div class="banner">
-    <div class="container pb-8">
+    <div class="container pt-8 pb-16">
       <h1>Exercises</h1>
       {
         page.lastPage === 1 ? null : (
@@ -40,15 +40,17 @@ const { page } = Astro.props;
       {
         page.data.map((exercise) => (
           <div class="flex flex-wrap items-start justify-center w-full sm:w-1/2 lg:w-1/3 px-2 mb-8">
-            <a href={`/exercises/${exercise.id}/`}>
-              <Image
-                src={`/assets/exercises/images/${exercise.id}.jpg`}
-                alt={"exercise: " + exercise.data.name}
-                width={200}
-                height={200}
-              />
-              <p class="text-center">{exercise.data.name}</p>
-            </a>
+            <div class="flex-col justify-center ">
+              <a href={`/exercises/${exercise.data.id}/`}>
+                <Image
+                  src={`/assets/exercises/images/${exercise.data.id}.jpg`}
+                  alt={"exercise: " + exercise.data.name}
+                  width={200}
+                  height={200}
+                />
+                <p class="text-center">{exercise.data.name} →</p>
+              </a>
+            </div>
           </div>
         ))
       }
