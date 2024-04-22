@@ -41,13 +41,13 @@ const { page } = Astro.props;
         page.data.map((exercise) => (
           <div class="flex flex-wrap items-start justify-center w-full sm:w-1/2 lg:w-1/3 px-2 mb-8">
             <div class="flex-col justify-center ">
+              <Image
+                src={`/assets/exercises/images/${exercise.data.id}.jpg`}
+                alt={"exercise: " + exercise.data.name}
+                width={200}
+                height={200}
+              />
               <a href={`/exercises/${exercise.data.id}/`}>
-                <Image
-                  src={`/assets/exercises/images/${exercise.data.id}.jpg`}
-                  alt={"exercise: " + exercise.data.name}
-                  width={200}
-                  height={200}
-                />
                 <p class="text-center">{exercise.data.name} →</p>
               </a>
             </div>

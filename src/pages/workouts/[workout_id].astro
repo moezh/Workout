@@ -25,17 +25,6 @@ const { workout, exercises } = Astro.props;
     </div>
   </div>
   <div class="container pt-4">
-    <div class="h-[225px] overflow-hidden rounded-lg">
-      <Image
-        src={`/assets/workouts/images/${workout.data.id}.jpg`}
-        alt={workout.data.name}
-        width={1000}
-        height={750}
-        class="relative -top-[0px] sm:-top-[50px] md:-top-[100px] lg:-top-[150px] mx-auto"
-      />
-    </div>
-  </div>
-  <div class="container pt-4">
     <Workout workout={workout} exercises={exercises} client:load />
   </div>
 </Layout>

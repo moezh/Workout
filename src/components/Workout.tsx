@@ -126,9 +126,9 @@ const Workout = (props: Props) => {
           Start Workout →
         </button>
       </div>
-      {workout.map((exercise) => (
-        <div className="flex items-center justify-center pt-4">
-          <div className="flex-shrink">
+      {workout.map((exercise, index) => (
+        <div key={index} className="flex items-center justify-center pt-4">
+          <div className="flex-shrink w-[150px] md:w-[200px]">
             <img
               src={`/assets/exercises/images/${exercise.data.id}.jpg`}
               alt={"exercise: " + exercise.data.name}
@@ -137,9 +137,11 @@ const Workout = (props: Props) => {
             />
           </div>
           <div className="flex-grow pl-8">
-            {exercise.data.name}
-            <br />
-            <small>30s work / 10s rest</small>
+            <a href={`/exercises/${exercise.data.id}/`}>
+              {exercise.data.name}
+              <br />
+              <small>30s work / 10s rest</small>
+            </a>
           </div>
           <div className="flex-shrink">
             <a href={`/exercises/${exercise.data.id}/`}>→</a>
