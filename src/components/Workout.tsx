@@ -114,32 +114,43 @@ const Workout = (props: Props) => {
     setWorkout(workoutExercises);
   }, []);
 
+  const startPlayer = () => {
+    localStorage.setItem("currentWorkout", JSON.stringify(workout));
+    window.location.href = "/player";
+  };
+
   return workout ? (
     <div className="flex-col items-center justify-center">
+      <div className="flex">
+        <button className="button full-width rounded-md" onClick={startPlayer}>
+          Start Workout →
+        </button>
+      </div>
       {workout.map((exercise) => (
         <div className="flex items-center justify-center pt-4">
           <div className="flex-shrink">
-            <a href={`/exercises/${exercise.id}/`}>
-              <img
-                src={`/assets/exercises/images/${exercise.id}.jpg`}
-                alt={"exercise: " + exercise.data.name}
-                width={200}
-                height={200}
-              />
-            </a>
+            <img
+              src={`/assets/exercises/images/${exercise.id}.jpg`}
+              alt={"exercise: " + exercise.data.name}
+              width={200}
+              height={200}
+            />
           </div>
           <div className="flex-grow pl-8">
-            <a href={`/exercises/${exercise.id}/`}>
-              {exercise.data.name}
-              <br />
-              <small>30s work / 10s rest</small>
-            </a>
+            {exercise.data.name}
+            <br />
+            <small>30s work / 10s rest</small>
           </div>
           <div className="flex-shrink">
             <a href={`/exercises/${exercise.id}/`}>→</a>
           </div>
         </div>
       ))}
+      <div className="flex pt-4">
+        <button className="button full-width rounded-md" onClick={startPlayer}>
+          Start Workout →
+        </button>
+      </div>
     </div>
   ) : null;
 };

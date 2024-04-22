@@ -97,6 +97,7 @@ button {
   font-weight: bold;
   white-space: nowrap;
   cursor: pointer;
+  text-align: center;
 }
 .button-small {
   all: unset;
@@ -108,6 +109,10 @@ button {
   font-weight: bold;
   white-space: nowrap;
   cursor: pointer;
+  text-align: center;
+}
+.full-width {
+  width: 100%;
 }
 .astro-code {
   padding: var(--size-base) var(--size-medium);
