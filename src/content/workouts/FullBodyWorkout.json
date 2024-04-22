@@ -3,8 +3,6 @@
   "type": "Full Body Workout",
   "name": "Upper, Lower & Core",
   "description": "This workout exercises your whole body, with all muscle groups being used and stimulated in one single session.",
-  "work_seconds": 30,
-  "rest_seconds": 10,
   "circuit": 1,
   "warmupTarget": [],
   "workoutTarget": [

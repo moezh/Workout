@@ -3,8 +3,6 @@
   "type": "Core Workout",
   "name": "Abs, Obliques & Lower Back",
   "description": "This workout exercises your core, with all muscle groups located in this part being used and stimulated in one single session.",
-  "work_seconds": 30,
-  "rest_seconds": 10,
   "circuit": 3,
   "warmupTarget": [],
   "workoutTarget": [

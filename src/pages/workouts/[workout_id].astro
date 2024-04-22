@@ -18,13 +18,13 @@ const { workout, exercises } = Astro.props;
 
 <Layout title={workout.data.name} description={workout.data.description}>
   <div class="container">
-    <div class="h-[150px] overflow-hidden">
+    <div class="h-[250px] overflow-hidden">
       <Image
         src={`/assets/workouts/images/${workout.id}.jpg`}
         alt={workout.data.name}
         width={1000}
         height={750}
-        class="relative -top-[100px] sm:-top-[150px] md:-top-[200px] lg:-top-[250px] mx-auto"
+        class="relative -top-[0px] sm:-top-[50px] md:-top-[100px] lg:-top-[150px] mx-auto"
       />
     </div>
     <div class="h-[75px] banner px-4 z-10">

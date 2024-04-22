@@ -34,8 +34,6 @@ const workouts = defineCollection({
     type: z.string(),
     name: z.string(),
     description: z.string(),
-    work_seconds: z.number(),
-    rest_seconds: z.number(),
     circuit: z.number(),
     warmupTarget: z.array(
       z.object({
