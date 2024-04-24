@@ -158,35 +158,44 @@ const Player = () => {
   if (samantha) utterance.voice = samantha;
 
   return (
-    <div className="flex-col">
-      <div className="flex text-center">
-        <div className="grow">
-          <b>
-            {count + 1} of {exercises.length}
-          </b>
-          <br />
-          Exercises
+    <div className="flex flex-col h-screen">
+      <div className="flex flex-col shrink pt-8">
+        <div className="flex flex-row text-center">
+          <div className="grow">
+            <b>
+              {count + 1} of {exercises.length}
+            </b>
+            <br />
+            Exercises
+          </div>
+          <div className="grow">
+            <b>{toTime(timerWorkout)}</b>
+            <br />
+            Overall Time
+          </div>
         </div>
-        <div className="grow">
-          <b>{toTime(timerWorkout)}</b>
-          <br />
-          Overall Time
-        </div>
+        <h1 className="text-center pb-4">{exercise.data.name}</h1>
+        <div className="h-1 bg-neutral-100"></div>
+        <div
+          className="h-1 bg-black relative -top-1"
+          style={{
+            width: `${((count + 1) / 12) * 100}%`,
+          }}
+        ></div>
       </div>
-      <div className="flex-col">
-        <h1 className="text-center">{exercise.data.name}</h1>
+      <div className="flex flex-col grow items-center justify-center">
         <div className="relative h-0">
           {isActive ? (
             !isGetPrepared ? null : (
-              <div className="h-[300px] bg-white bg-opacity-50">
-                <div className="relative top-[100px] text-orange-600 uppercase ">
+              <div className=" bg-black bg-opacity-50">
+                <div className="relative top-[100px] uppercase ">
                   <b>Get Ready</b>
                 </div>
               </div>
             )
           ) : (
-            <div className="h-[300px] bg-white bg-opacity-50">
-              <div className="relative top-[100px] uppercase">
+            <div className=" bg-black w-full h-[100px] bg-opacity-50">
+              <div className="relative w-full top-[100px] uppercase text-red-700">
                 <b>Paused</b>
               </div>
             </div>
@@ -210,107 +219,118 @@ const Player = () => {
           />
         </video>
       </div>
-      <div className="flex">
-        <div className="w-32">
-          {count > 0 ? (
-            <button onClick={prevExercise} className="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
-              <img
-                src={`/assets/exercises/images/${
-                  exercises[count - 1]?.data.id
-                }.jpg`}
-                alt={"Exercise " + exercise.data.name}
-                width={100}
-                height={100}
-                loading="lazy"
-                decoding="async"
-              />
-            </button>
-          ) : null}
-        </div>
-        <div className="grow">
-          <button onClick={playPauseExercise}>
-            <h3>
-              {isGetPrepared ? restSeconds - seconds : workSeconds - seconds}
-            </h3>
-            <div>Seconds</div>
-            <div className="pt-2">
-              {isActive ? (
+      <div className="flex flex-col shrink pb-8">
+        <div className="h-1 bg-neutral-100"></div>
+        <div
+          className="h-1 bg-black relative -top-1"
+          style={{
+            width: `${
+              (seconds / (isGetPrepared ? restSeconds : workSeconds)) * 100
+            }%`,
+          }}
+        ></div>
+        <div className="flex flex-row">
+          <div className="w-32">
+            {count > 0 ? (
+              <button onClick={prevExercise} className="flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-6 h-6 mx-auto"
+                  className="w-4 h-4"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M15.75 5.25v13.5m-7.5-13.5v13.5"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
                   />
                 </svg>
-              ) : (
+                <img
+                  src={`/assets/exercises/images/${
+                    exercises[count - 1]?.data.id
+                  }.jpg`}
+                  alt={"Exercise " + exercise.data.name}
+                  width={100}
+                  height={100}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+            ) : null}
+          </div>
+          <div className="grow">
+            <button onClick={playPauseExercise}>
+              <h3>
+                {isGetPrepared ? restSeconds - seconds : workSeconds - seconds}
+              </h3>
+              <div>Seconds</div>
+              <div className="pt-2">
+                {isActive ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 mx-auto"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 5.25v13.5m-7.5-13.5v13.5"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 mx-auto"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
+                    />
+                  </svg>
+                )}
+              </div>
+            </button>
+          </div>
+          <div className="w-32">
+            {count < exercises.length - 1 ? (
+              <button onClick={nextExercise} className="flex items-center">
+                <img
+                  src={`/assets/exercises/images/${
+                    exercises[count + 1]?.data.id
+                  }.jpg`}
+                  alt={"Exercise " + exercise.data.name}
+                  width={100}
+                  height={100}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-6 h-6 mx-auto"
+                  className="w-4 h-4"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
                   />
                 </svg>
-              )}
-            </div>
-          </button>
-        </div>
-        <div className="w-32">
-          {count < exercises.length - 1 ? (
-            <button onClick={nextExercise} className="flex items-center">
-              <img
-                src={`/assets/exercises/images/${
-                  exercises[count + 1]?.data.id
-                }.jpg`}
-                alt={"Exercise " + exercise.data.name}
-                width={100}
-                height={100}
-                loading="lazy"
-                decoding="async"
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
-          ) : null}
+              </button>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>
