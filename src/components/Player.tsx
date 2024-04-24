@@ -184,15 +184,15 @@ const Player = () => {
         ></div>
       </div>
       <div className="flex flex-col grow items-center justify-center">
-        <div className="relative h-0">
+        <div className="h-0">
           {isActive ? (
             !isGetPrepared ? null : (
-              <div className="relative top-4 uppercase text-orange-500">
+              <div className="relative top-[100px] uppercase z-10">
                 <b>Get Ready</b>
               </div>
             )
           ) : (
-            <div className="relative top-4 uppercase text-red-500">
+            <div className="relative top-[100px] uppercase text-red-600  z-10">
               <b>Paused</b>
             </div>
           )}
@@ -204,7 +204,9 @@ const Player = () => {
           loop
           width={400}
           height={300}
-          className="mx-auto overflow-hidden"
+          className={`mx-auto overflow-hidden ${
+            isActive && !isGetPrepared ? "" : "opacity-50"
+          }`}
         >
           <source
             src={`/assets/exercises/videos/${exercise.data.id.replace(
