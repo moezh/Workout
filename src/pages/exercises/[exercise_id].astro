@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const exercises = await getCollection("exercises");
@@ -49,3 +48,4 @@ const { exercise } = Astro.props;
     </ul>
   </div>
 </Layout>
+∏
