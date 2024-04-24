@@ -173,52 +173,47 @@ const Player = () => {
           Overall Time
         </div>
       </div>
-      <div className="flex-col items-center justify-center">
+      <div className="flex-col">
         <h1 className="text-center">{exercise.data.name}</h1>
-        <div className="relative h-0  text-center flex-col items-center justify-center">
+        <div className="relative h-0">
           {isActive ? (
             !isGetPrepared ? null : (
-              <div className="bg-white bg-opacity-50 py-4 h-[300px]">
-                <div className="text-orange-600 uppercase relative top-[100px]">
+              <div className="h-[300px] bg-white bg-opacity-50">
+                <div className="relative top-[100px] text-orange-600 uppercase ">
                   <b>Get Ready</b>
                 </div>
               </div>
             )
           ) : (
-            <div className="bg-white bg-opacity-50 py-4 h-[300px]">
-              <div className="uppercase relative top-[100px]">
+            <div className="h-[300px] bg-white bg-opacity-50">
+              <div className="relative top-[100px] uppercase">
                 <b>Paused</b>
               </div>
             </div>
           )}
         </div>
-        <div className="h-[300px]">
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            width={400}
-            height={300}
-            className="mx-auto"
-          >
-            <source
-              src={`/assets/exercises/videos/${exercise.data.id.replace(
-                "Right",
-                side
-              )}.mp4`}
-              type="video/mp4"
-            />
-          </video>
-        </div>
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          width={400}
+          height={300}
+          className="mx-auto"
+        >
+          <source
+            src={`/assets/exercises/videos/${exercise.data.id.replace(
+              "Right",
+              side
+            )}.mp4`}
+            type="video/mp4"
+          />
+        </video>
       </div>
-      <div className="flex text-center pt-16">
+      <div className="flex">
         <div className="w-32">
           {count > 0 ? (
-            <button
-              onClick={prevExercise}
-              className="flex flex-row items-center"
-            >
+            <button onClick={prevExercise} className="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -289,10 +284,7 @@ const Player = () => {
         </div>
         <div className="w-32">
           {count < exercises.length - 1 ? (
-            <button
-              onClick={nextExercise}
-              className="flex flex-row items-center"
-            >
+            <button onClick={nextExercise} className="flex items-center">
               <img
                 src={`/assets/exercises/images/${
                   exercises[count + 1]?.data.id
