@@ -116,7 +116,7 @@ const Workout = (props: Props) => {
 
   const startPlayer = () => {
     localStorage.setItem("currentWorkout", JSON.stringify(workout));
-    window.location.href = "/player";
+    window.location.href = "/play";
   };
 
   return workout ? (

@@ -16,18 +16,19 @@ type Exercises = {
 }[];
 
 const Player = () => {
-  const [exercises, setExercises] = useState<Exercises>([]);
   const [seconds, setSeconds] = useState(0);
   const [timerWorkout, setTimerWorkout] = useState(0);
+
+  const [exercises, setExercises] = useState<Exercises>([]);
+  const [count, setCount] = useState(0);
+  const [side, setSide] = useState("Right");
+
   const [isActive, setIsActive] = useState(true);
   const [isGetPrepared, setIsGetPrepared] = useState(true);
-  const [side, setSide] = useState("Right");
-  const [isEnded, setIsEnded] = useState(false);
-  const [count, setCount] = useState(0);
 
-  let exercise = exercises[count];
-  let workSeconds = 30;
-  let restSeconds = 10;
+  const exercise = exercises[count];
+  const workSeconds = 30;
+  const restSeconds = 10;
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -36,9 +37,10 @@ const Player = () => {
   }
 
   function endWorkout() {
-    setIsEnded(true);
     setIsActive(false);
     setSeconds(0);
+    speechSynthesis.cancel();
+    window.location.href = "/finish";
   }
 
   function prevExercise() {
@@ -78,12 +80,6 @@ const Player = () => {
     speechSynthesis.cancel();
   }
 
-  const changeSide = () => {
-    const video = videoRef.current;
-    video?.load();
-    isActive ? video?.play() : video?.pause();
-  };
-
   useEffect(() => {
     const currentWorkout = localStorage.getItem("currentWorkout");
     setExercises(JSON.parse(currentWorkout ? currentWorkout : "[]"));
@@ -107,8 +103,11 @@ const Player = () => {
             setSeconds(0);
           }
         }
-        if (seconds == workSeconds) {
-          if (count == exercises.length - 1) {
+        if (seconds === workSeconds) {
+          if (count === exercises.length - 1) {
+            utterance.text =
+              "Congratulations! You have completed your workout.";
+            speechSynthesis.speak(utterance);
             endWorkout();
           } else {
             nextExercise();
@@ -116,7 +115,7 @@ const Player = () => {
         }
         if (isGetPrepared) {
           if (seconds === 1)
-            utterance.text = `"Get ready for : ${workSeconds} seconds of ${exercise.data.name}`;
+            utterance.text = `"Get ready for : ${workSeconds} seconds of ${exercise?.data.name}`;
           if (seconds === restSeconds - 4) utterance.text = "3";
           if (seconds === restSeconds - 3) utterance.text = "2";
           if (seconds === restSeconds - 2) utterance.text = "1";
@@ -124,7 +123,7 @@ const Player = () => {
           speechSynthesis.speak(utterance);
         } else {
           if (seconds === Math.ceil(workSeconds / 2) - 1) {
-            if (exercise.data.id.slice(-5) === "Right") {
+            if (exercise?.data.id.slice(-5) === "Right") {
               utterance.text = "Change side.";
               setSide(side === "Right" ? "Left" : "Right");
             } else {
@@ -147,7 +146,7 @@ const Player = () => {
     };
   }, [isActive, seconds]);
 
-  if (exercise === undefined)
+  if (!exercise)
     return (
       <div className="flex h-screen items-center justify-center">
         Loading...
@@ -213,7 +212,7 @@ const Player = () => {
           </video>
         </div>
       </div>
-      <div className="flex text-center pt-4">
+      <div className="flex text-center pt-16">
         <div className="w-32">
           {count > 0 ? (
             <button
