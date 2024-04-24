@@ -187,17 +187,13 @@ const Player = () => {
         <div className="relative h-0">
           {isActive ? (
             !isGetPrepared ? null : (
-              <div className=" bg-black bg-opacity-50">
-                <div className="relative top-[100px] uppercase ">
-                  <b>Get Ready</b>
-                </div>
+              <div className="relative top-4 uppercase text-orange-500">
+                <b>Get Ready</b>
               </div>
             )
           ) : (
-            <div className=" bg-black w-full h-[100px] bg-opacity-50">
-              <div className="relative w-full top-[100px] uppercase text-red-700">
-                <b>Paused</b>
-              </div>
+            <div className="relative top-4 uppercase text-red-500">
+              <b>Paused</b>
             </div>
           )}
         </div>
@@ -208,7 +204,7 @@ const Player = () => {
           loop
           width={400}
           height={300}
-          className="mx-auto"
+          className="mx-auto overflow-hidden"
         >
           <source
             src={`/assets/exercises/videos/${exercise.data.id.replace(
