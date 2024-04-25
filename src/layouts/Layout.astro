@@ -1,8 +1,6 @@
 ---
 import "../styles/main.css";
 
-import IntersectionObserver from "../components/IntersectionObserver.astro";
-
 interface Props {
   title: string;
   description: string;
@@ -54,7 +52,7 @@ const { title, description } = Astro.props;
     <footer class="flex-shrink px-6 py-4 max-w-screen-lg mx-auto w-full">
       <div class="flex flex-col">
         <div class="flex space-x-3">
-          <!--  <a href="/blog" aria-label="Blog">Blog</a> -->
+          <a href="/blog" aria-label="Blog">Blog</a>
           <a href="/contact" aria-label="Contact">Contact</a>
           <a href="/privacy-policy" aria-label="Privacy Policy">
             Privacy Policy
@@ -66,6 +64,5 @@ const { title, description } = Astro.props;
         Copyright © {new Date().getFullYear()} - All right reserved
       </div>
     </footer>
-    <IntersectionObserver />
   </body>
 </html>

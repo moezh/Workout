@@ -45,6 +45,7 @@ body {
     url("/bg.jpg");
   background-repeat: repeat;
   background-position: center center;
+  background-attachment: fixed;
 }
 .container {
   padding-left: var(--size-large);

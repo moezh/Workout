@@ -63,18 +63,6 @@ function getRandomExercises(listExercises: Exercises, listFilter: Filter) {
       listExercises = listExercises.filter(
         (element) => element !== filtredExercises[0]
       );
-      /*if (filtredExercises[0].id.includes("Right")) {
-        let resultOtherSide = listExercises.filter(
-          (exercise) =>
-            exercise.data.id == filtredExercises[0].id.replace("Right", "Left")
-        )[0];
-        if (resultOtherSide) {
-          randomExercises.push(resultOtherSide);
-          listExercises = listExercises.filter(
-            (element) => element !== resultOtherSide
-          );
-        }
-      }*/
     }
   });
   return randomExercises;
