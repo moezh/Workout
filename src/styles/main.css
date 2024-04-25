@@ -34,9 +34,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.background {
+  background-color: hsl(var(--muted));
+}
 .banner {
   background-color: hsl(var(--muted));
   text-align: center;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("/bg.jpg");
+  background-repeat: repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
 .container {
   padding-left: var(--size-large);
