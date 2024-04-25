@@ -39,8 +39,7 @@ const Player = () => {
   function endWorkout() {
     setIsActive(false);
     setSeconds(0);
-    speechSynthesis.cancel();
-    window.location.href = "/finish";
+    window.location.href = "/completed";
   }
 
   function prevExercise() {
@@ -93,6 +92,11 @@ const Player = () => {
 
   useEffect(() => {
     let interval = undefined;
+    let utterance = new SpeechSynthesisUtterance();
+    let samantha = speechSynthesis
+      .getVoices()
+      .find((v) => v.name == "Samantha");
+    if (samantha) utterance.voice = samantha;
     if (isActive) {
       interval = setInterval(() => {
         setSeconds((seconds) => seconds + 1);
@@ -146,16 +150,7 @@ const Player = () => {
     };
   }, [isActive, seconds]);
 
-  if (!exercise)
-    return (
-      <div className="flex h-screen items-center justify-center">
-        Loading...
-      </div>
-    );
-
-  let utterance = new SpeechSynthesisUtterance();
-  let samantha = speechSynthesis.getVoices().find((v) => v.name == "Samantha");
-  if (samantha) utterance.voice = samantha;
+  if (!exercise) return null;
 
   return (
     <div className="flex flex-col h-screen">

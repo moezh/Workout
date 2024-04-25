@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Workout from "../../components/Workout";
-import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const workouts = await getCollection("workouts");

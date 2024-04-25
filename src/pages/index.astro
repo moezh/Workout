@@ -1,8 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getCollection, getEntry } from "astro:content";
+import Workout from "../components/Workout";
+
+const workout = await getEntry("workouts", "FullBodyWorkout");
+const exercises = await getCollection("exercises");
 ---
 
-<Layout title="" description="">
-  <div class="banner"></div>
-  <div class="container"></div>
+<Layout
+  title="7-Minute Home Workout"
+  description="No time to work out? No excuses with this scientifically proven 7 minute home workout."
+>
+  <div class="banner">
+    <div class="container pt-8 pb-16">
+      <h1>{workout.data.type}</h1>
+      <h2>{workout.data.name}</h2>
+      <p>{workout.data.description}</p>
+    </div>
+  </div>
+  <div class="container pt-8">
+    <Workout workout={workout} exercises={exercises} client:load />
+  </div>
 </Layout>
