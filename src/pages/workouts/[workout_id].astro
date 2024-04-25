@@ -18,14 +18,7 @@ const bgImg = `url("/assets/workouts/images/${workout.data.id}.jpg")`;
 ---
 
 <Layout title={workout.data.name} description={workout.data.description}>
-  <div
-    class="banner"
-    style=`background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("/assets/workouts/images/${workout.data.id}.jpg");
-           background-repeat: no-repeat;
-           background-position: center center;
-           background-attachment: fixed;
-           background-size: cover;`
-  >
+  <div class="banner">
     <div class="container pt-8 pb-16">
       <h1>{workout.data.type}</h1>
       <h2>{workout.data.name}</h2>

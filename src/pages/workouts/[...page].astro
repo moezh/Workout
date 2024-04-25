@@ -30,6 +30,11 @@ const { page } = Astro.props;
           </>
         )
       }
+      <p>
+        This list of workouts without equipment can be done daily anytime,
+        anywhere. Even if you travel for work, if you have some space to stretch
+        out, then you can workout.
+      </p>
     </div>
   </div>
   <div class="container">
@@ -45,7 +50,7 @@ const { page } = Astro.props;
                 height={600}
                 class="mx-auto rounded-t-lg"
               />
-              <p class="text-center background pb-4 rounded-b-lg">
+              <p class="banner px-4 pb-4 rounded-b-lg">
                 <b>{workout.data.type} →</b>
                 <br />
                 {workout.data.name}

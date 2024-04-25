@@ -34,9 +34,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.background {
-  background-color: hsl(var(--muted));
-}
 .banner {
   background-color: hsl(var(--muted));
   text-align: center;
@@ -48,7 +45,6 @@ body {
     url("/bg.jpg");
   background-repeat: repeat;
   background-position: center center;
-  background-attachment: fixed;
 }
 .container {
   padding-left: var(--size-large);

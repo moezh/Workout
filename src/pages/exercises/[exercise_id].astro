@@ -13,10 +13,20 @@ export async function getStaticPaths() {
 const { exercise } = Astro.props;
 ---
 
-<Layout title={exercise.data.name} description={exercise.data.instruction}>
+<Layout
+  title={exercise.data.name}
+  description=`Target: ${exercise.data.target}. Target Muscle(s): ${exercise.data.target_muscles}. Instruction: ${exercise.data.instruction}`
+  `
+>
   <div class="banner">
     <div class="container pt-8 pb-16">
       <h1>{exercise.data.name}</h1>
+      <p>
+        <b>Target:</b>
+        {exercise.data.target}.<br />
+        <b>Target Muscle(s):</b>
+        {exercise.data.target_muscles}.
+      </p>
     </div>
   </div>
   <div class="container pt-8">
@@ -49,3 +59,4 @@ const { exercise } = Astro.props;
   </div>
 </Layout>
 ∏
+
