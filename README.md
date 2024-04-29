@@ -1,6 +1,6 @@
-# Home Workout App
+# Home Workout | MVP
 
-This home workout web app is built using the following technologies:
+This home workout web-based application is built using the following technologies:
 
 - `TypeScript` as programming languages,
 - `AstroJs` as a web framework,
