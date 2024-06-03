@@ -1,10 +1,10 @@
 {
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check --minimumSeverity warning && astro build",
     "preview": "wrangler pages dev dist",
-    "create": "wrangler pages project create workout --production-branch=main",
-    "deploy": "wrangler pages deploy dist --project-name=workout",
+    "create": "wrangler pages project create home-workout --production-branch=main",
+    "deploy": "wrangler pages deploy dist --project-name=home-workout",
     "astro": "astro"
   },
   "dependencies": {
