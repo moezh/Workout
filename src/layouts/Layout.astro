@@ -1,6 +1,4 @@
 ---
-import logo from "../../public/favicon.svg";
-
 interface Props {
   title: string;
   description: string;
@@ -136,7 +134,21 @@ const { title, description } = Astro.props;
       <div class="flex">
         <div class="flex-shrink">
           <a href="/" aria-label="Homepage">
-            <img src={logo.src} alt="logo" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5-3.9 19.5m-2.1-19.5-3.9 19.5"
+              ></path>
+            </svg>
           </a>
         </div>
         <div class="flex-grow"></div>
