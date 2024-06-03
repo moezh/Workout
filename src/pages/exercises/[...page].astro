@@ -23,29 +23,25 @@ const { page } = Astro.props;
   title="List of exercises"
   description="This list of exercises without equipment can be done daily anytime, anywhere. Even if you travel for work, if you have some space to stretch out, then you can exercise."
 >
-  <div class="banner">
-    <div class="container pt-8 pb-16">
-      <h1>Exercises</h1>
-      {
-        page.lastPage === 1 ? null : (
-          <>
-            Page {page.currentPage} / {page.lastPage}
-          </>
-        )
-      }
-      <p>
-        This list of exercises without equipment can be done daily anytime,
-        anywhere. Even if you travel for work, if you have some space to stretch
-        out, then you can exercise.
-      </p>
-    </div>
-  </div>
   <div class="container">
+    <h1>Exercises</h1>
+    {
+      page.lastPage === 1 ? null : (
+        <>
+          Page {page.currentPage} / {page.lastPage}
+        </>
+      )
+    }
+    <p>
+      This list of exercises without equipment can be done daily anytime,
+      anywhere. Even if you travel for work, if you have some space to stretch
+      out, then you can exercise.
+    </p>
     <div class="flex flex-row flex-wrap pt-4">
       {
         page.data.map((exercise) => (
-          <div class="flex flex-wrap items-start justify-center w-full sm:w-1/2 lg:w-1/3 px-2 mb-8">
-            <div class="flex-col justify-center ">
+          <div class="flex flex-wrap items-start justify-start w-full sm:w-1/2 lg:w-1/3 px-2 mb-8">
+            <div class="flex-col">
               <Image
                 src={`/assets/exercises/images/${exercise.data.id}.jpg`}
                 alt={"Exercise " + exercise.data.name}
@@ -53,7 +49,7 @@ const { page } = Astro.props;
                 height={200}
               />
               <a href={`/exercises/${exercise.data.id}/`}>
-                <p class="text-center">{exercise.data.name} →</p>
+                <p>{exercise.data.name} →</p>
               </a>
             </div>
           </div>

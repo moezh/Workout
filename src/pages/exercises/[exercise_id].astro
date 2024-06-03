@@ -18,13 +18,9 @@ const { exercise } = Astro.props;
   description=` Target Muscle(s): ${exercise.data.target_muscles}. Instruction: ${exercise.data.instruction}`
   `
 >
-  <div class="banner">
-    <div class="container pt-8 pb-16">
-      <h1>{exercise.data.name}</h1>
-      <p><b>Target Muscle(s): </b>{exercise.data.target_muscles}.</p>
-    </div>
-  </div>
-  <div class="container pt-8">
+  <div class="container">
+    <h1>{exercise.data.name}</h1>
+    <p><b>Target Muscle(s): </b>{exercise.data.target_muscles}.</p>
     <video autoplay muted loop width={400} height={300} class="mx-auto">
       <source
         src={`/assets/exercises/videos/${exercise.data.id}.mp4`}

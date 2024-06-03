@@ -20,37 +20,33 @@ const { page } = Astro.props;
   title="List of 7-Minute workouts"
   description="This list of workouts without equipment can be done daily anytime, anywhere. Even if you travel for work, if you have 7 minutes and some space to stretch out, then you can workout."
 >
-  <div class="banner">
-    <div class="container pt-8 pb-16">
-      <h1>7-Minute Workouts</h1>
-      {
-        page.lastPage === 1 ? null : (
-          <>
-            Page {page.currentPage} / {page.lastPage}
-          </>
-        )
-      }
-      <p>
-        This list of workouts without equipment can be done daily anytime,
-        anywhere. Even if you travel for work, if you have 7 minutes and some
-        space to stretch out, then you can workout.
-      </p>
-    </div>
-  </div>
   <div class="container">
-    <div class="flex flex-row flex-wrap pt-8 justify-center">
+    <h1>7-Minute Workouts</h1>
+    {
+      page.lastPage === 1 ? null : (
+        <>
+          Page {page.currentPage} / {page.lastPage}
+        </>
+      )
+    }
+    <p>
+      This list of workouts without equipment can be done daily anytime,
+      anywhere. Even if you travel for work, if you have 7 minutes and some
+      space to stretch out, then you can workout.
+    </p>
+    <div class="flex flex-row flex-wrap pt-8 justify-start">
       {
         page.data.map((workout) => (
-          <div class="flex-col w-full md:w-1/2 px-4 mb-8">
+          <div class="flex-col w-full md:w-1/2 pr-8 mb-8">
+            <Image
+              src={`/assets/workouts/images/${workout.data.id}.jpg`}
+              alt={workout.data.name}
+              width={800}
+              height={600}
+              class="mx-auto rounded-lg"
+            />
             <a href={`/workouts/${workout.data.id}/`}>
-              <Image
-                src={`/assets/workouts/images/${workout.data.id}.jpg`}
-                alt={workout.data.name}
-                width={800}
-                height={600}
-                class="mx-auto rounded-t-lg"
-              />
-              <p class="banner px-4 pb-4 rounded-b-lg">
+              <p class="pr-4 pb-4 rounded-b-lg">
                 <b>{workout.data.type} →</b>
                 <br />
                 {workout.data.name}

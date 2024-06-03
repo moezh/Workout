@@ -107,47 +107,5 @@ button {
   white-space: nowrap;
   cursor: pointer;
   text-align: center;
-}
-.button-small {
-  all: unset;
-  font-family: var(--serif-font);
-  color: hsl(var(--foreground));
-  background-color: hsl(var(--border));
-  border-radius: var(--size-small);
-  padding: var(--size-small) var(--size-small);
-  font-weight: bold;
-  white-space: nowrap;
-  cursor: pointer;
-  text-align: center;
-}
-.astro-code {
-  padding: var(--size-base) var(--size-medium);
-  margin: var(--size-base) 0;
-}
-.transition {
-  transition-property: all;
-  transition-timing-function: ease;
-  transition-duration: 400ms;
-  transition-delay: 0ms;
-}
-.opacity-0 {
-  opacity: 0;
-}
-.opacity-100 {
-  opacity: 1;
-}
-.translate-0 {
-  transform: translate(0px, 0px);
-}
-.translate-up {
-  transform: translateY(100%);
-}
-.translate-down {
-  transform: translateY(-100%);
-}
-.translate-left {
-  transform: translateX(100%);
-}
-.translate-right {
-  transform: translateX(-100%);
+  width: 100%;
 }

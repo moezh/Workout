@@ -108,8 +108,8 @@ const Workout = (props: Props) => {
   };
 
   return workout ? (
-    <div className="flex-col items-center justify-center">
-      <div className="flex justify-center">
+    <div className="flex-col items-start justify-start">
+      <div className="flex justify-start">
         <button className="button" onClick={startPlayer}>
           Start Workout →
         </button>

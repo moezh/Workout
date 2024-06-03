@@ -17,14 +17,12 @@ const bgImg = `url("/assets/workouts/images/${workout.data.id}.jpg")`;
 ---
 
 <Layout title={workout.data.name} description={workout.data.description}>
-  <div class="banner">
-    <div class="container pt-8 pb-16">
-      <h1>{workout.data.type}</h1>
-      <h2>{workout.data.name}</h2>
-      <p>{workout.data.description}</p>
+  <div class="container">
+    <h1>{workout.data.type}</h1>
+    <h2>{workout.data.name}</h2>
+    <p>{workout.data.description}</p>
+    <div class="pt-8">
+      <Workout workout={workout} exercises={exercises} client:load />
     </div>
-  </div>
-  <div class="container pt-8">
-    <Workout workout={workout} exercises={exercises} client:load />
   </div>
 </Layout>

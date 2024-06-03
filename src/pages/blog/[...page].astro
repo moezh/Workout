@@ -19,19 +19,15 @@ const { page } = Astro.props;
   title="Blog Posts"
   description="Here's the list of blog post about fitness, workout, and personal thoughts posted by me."
 >
-  <div class="banner">
-    <div class="container pt-8 pb-16">
-      <h1>Blog Articles</h1>
-      {
-        page.lastPage === 1 ? null : (
-          <>
-            Page {page.currentPage} / {page.lastPage}
-          </>
-        )
-      }
-    </div>
-  </div>
   <div class="container">
+    <h1>Blog Articles</h1>
+    {
+      page.lastPage === 1 ? null : (
+        <>
+          Page {page.currentPage} / {page.lastPage}
+        </>
+      )
+    }
     <div class="flex flex-row flex-wrap pt-4">
       {
         page.data.map((post, index) => (

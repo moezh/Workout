@@ -6,13 +6,13 @@ import Layout from "../layouts/Layout.astro";
   title="Workout Completed!"
   description="Congratulations! Your workout is completed."
 >
-  <div class="banner">
-    <div class="container pt-8 pb-16">
-      <h1>Workout completed!</h1><p>Great job, keep going!</p>
-    </div>
-  </div>
   <div class="container">
-    <div class="text-center pt-8">
+    <h1>Workout completed!</h1><p>Great job, keep going!</p>
+    <p>
+      If you're looking to maximize the results of your workout, good nutrition,
+      adequate rest and proper sleep, is the best way to go.
+    </p>
+    <div class="pt-8">
       <a href={`/`}><button id="close-button" class="button">Close →</button></a
       >
       <script is:inline>
@@ -21,13 +21,6 @@ import Layout from "../layouts/Layout.astro";
           localStorage.removeItem("currentWorkout");
         });
       </script>
-    </div>
-    <div class="pt-8">
-      <p>
-        <b>A Little Reminder: </b><br />If you're looking to maximize the
-        results of your workout, good nutrition, adequate rest and proper sleep,
-        is the best way to go.
-      </p>
     </div>
   </div>
 </Layout>
