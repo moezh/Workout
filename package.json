@@ -3,20 +3,19 @@
     "dev": "astro dev",
     "build": "astro check --minimumSeverity warning && astro build",
     "preview": "wrangler pages dev dist",
+    "login": "wrangler login",
     "create": "wrangler pages project create home-workout --production-branch=main",
     "deploy": "wrangler pages deploy dist --project-name=home-workout",
     "astro": "astro"
   },
   "dependencies": {
+    "astro": "*",
+    "react": "*",
+    "react-dom": "*",
+    "@astrojs/check": "*",
     "@astrojs/react": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
-    "astro": "*",
-    "react": "*",
-    "react-dom": "*"
-  },
-  "devDependencies": {
-    "@astrojs/check": "*",
     "@astrojs/sitemap": "*",
     "@astrojs/tailwind": "*",
     "tailwindcss": "*",

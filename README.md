@@ -16,6 +16,8 @@ This home workout web-based application is built using the following technologie
 
 1. To create the project on Cloudflare Pages, run the command: `npm run create`
 
+1. To login to Cloudflare Pages, run the command: `npm run login`
+
 1. To deploy to Cloudflare Pages, run the command: `npm run deploy`
 
 1. To spin up the development environment, run the command: `npm run dev`
