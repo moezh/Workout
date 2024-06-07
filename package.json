@@ -1,24 +1,22 @@
 {
-  "name": "home-workout",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check --minimumSeverity warning && astro build",
-    "preview": "wrangler pages dev dist",
+    "preview": "wrangler pages dev",
     "login": "wrangler login",
-    "create": "wrangler pages project create ${npm_package_name} --production-branch=main",
-    "deploy": "wrangler pages deploy dist --project-name=${npm_package_name}",
+    "create": "wrangler pages project create home-workout --production-branch=main",
+    "deploy": "wrangler pages deploy --commit-dirty=true",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "*",
+    "@astrojs/react": "*",
+    "@astrojs/tailwind": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
     "astro": "*",
     "react": "*",
     "react-dom": "*",
-    "@astrojs/check": "*",
-    "@astrojs/react": "*",
-    "@types/react": "*",
-    "@types/react-dom": "*",
-    "@astrojs/sitemap": "*",
-    "@astrojs/tailwind": "*",
     "tailwindcss": "*",
     "typescript": "*",
     "wrangler": "*"
